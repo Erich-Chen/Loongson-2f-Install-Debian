@@ -76,4 +76,14 @@ sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
 
 ```
 
-
+## Patch a new kernel 
+https://github.com/biergaizi/loongson-sources  
+```
+cd /tmp
+wget https://github.com/biergaizi/loongson-sources/releases/download/v3.16.4/linux-3.16.4-yeeloong-gaizi.tar.xz 
+tar xf linux-3.16.4-yeeloong-gaizi.tar.xz
+sudo cp -r 3.16.4-yeeloong-gaizi/boot/* /boot
+sudo cp -r 3.16.4-yeeloong-gaizi/lib/* /lib
+sudo update-grub
+sudo reboot
+```
