@@ -48,15 +48,25 @@ I selected Debian Desktop Enviroment and LXDE at TaskSel but I will disable GUI 
 
 
 ## Post Installation  
+Unable to start X-Desktop at first boot. Remove xserver-xorg-video-siliconmotion can *currently* solve the problem.  
+Press ALT+F1 to switch to text mode / shell.  
+
 ```
 su -                 # switch to root to enable sudo for current user
 apt install sudo
 echo '${USER}  ALL=(ALL:ALL) ALL' >> /etc/sudoers
 exit                 # switch back to current user
 
+# Remove Siliconmotion to fix GUI failure
+sudo apt purge xserver-xorg-video-siliconmotion
+```
+
+## More setup
+```
 # Install NTP and setup timezone
 sudo apt install ntp
 echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+# change "Asia/Shanghai" into your own timezone unless you are also in China. 
 date
 
 # Some software
