@@ -96,6 +96,27 @@ sudo update-grub
 sudo reboot
 ```
 
+## Cooling down fan speed
+ref. https://romanrm.net/loongson/yeeloong-fan  
+```
+sudo apt install lm-sensors 
+sensors
+sudo apt install thinkfan
+sudo systemctl stop thinkfan.service
+sudo cp /etc/thinkfan.conf{,.bak}
+cat << EOL | sudo tee /etc/thinkfan.conf
+sensor /sys/devices/virtual/hwmon/hwmon0/temp1_input
+fan /sys/class/hwmon/hwmon0/pwm1
+(0, 0, 62)
+(1, 60, 64)
+(2, 62, 66)
+(3, 64, 32767)
+# The format of the threshold lines is (fan step, temperature on which to step down, temperature on which to step up).
+EOL
+sudo systemctl start thinkfan.service
+```
+The fan will almost always quite.  
+
 ## Debian Wheezy (7.x) X-Desktop fix
 ```
 sudo apt remove xserver-xorg-video-siliconmotion
