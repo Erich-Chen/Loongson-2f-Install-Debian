@@ -1,0 +1,11 @@
+Downloaded from the following url as of the date Dec. 14, 2019. 
+http://ftp.coe.psu.ac.th/debian/dists/Debian8.9/main/installer-mipsel/current/images/loongson-2f/netboot/ 
+
+
+[ICO]	Name	Last modified	Size	Description
+[PARENTDIR]	Parent Directory	 	-	 
+[   ]	boot.cfg	2017-07-20 16:31	130	 
+[   ]	initrd.gz	2017-07-20 16:30	12M	 
+[   ]	vmlinux-3.16.0-4-loongson-2f	2017-07-20 16:30	11M	
+
+
