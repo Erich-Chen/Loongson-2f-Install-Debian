@@ -3,16 +3,31 @@ My experience to install Debian on loongson-2f
 ref. https://wiki.debian.org/DebianYeeloong/HowTo/Install  
 
 ## Hardware
-I bought a Lemote YeeLoong 8089D with CNY279 at Oct. 23rd, year 2013, 4 years ago "yesterday".  
+I bought a Lemote YeeLoong 8089D with CNY279 at Oct. 23rd, year 2013.  
 
 ## Netboot Files
 Download netboot files:  
 Wheezy (Debian 7.11) : http://ftp.debian.org/debian/dists/wheezy/main/installer-mipsel/current/images/loongson-2f/netboot/  
-or
-Jessie (Debian 8.9)  : http://ftp.debian.org/debian/dists/jessie/main/installer-mipsel/current/images/loongson-2f/netboot/  
-I choose Jessie :-)  
+http://archive.debian.org/debian-archive/debian/dists/wheezy/main/installer-mipsel/current/images/loongson-2f/netboot/
+You will find the following files:
 
-* Unfortunately Debian dropped images for loongson-2f. https://lists.debian.org/debian-devel-announce/2016/07/msg00000.html  
+Name                          Last modified       Size
+boot.cfg                      2016-05-30 23:04    129
+initrd.gz                     2016-05-30 23:04    5.0M
+vmlinux-3.2.0-4-loongson-2f   2016-05-30 23:04    7.9M
+
+or
+Jessie (Debian 8.9)  : ~~http://ftp.debian.org/debian/dists/jessie/main/installer-mipsel/current/images/loongson-2f/netboot/~~  
+I choose Jessie :-)  
+UPDATE: Now moved to : http://archive.debian.org/debian-archive/debian/dists/jessie/main/installer-mipsel/current/images/loongson-2f/netboot/
+
+I have downloaded the following files:
+Name	                           Last modified	       Size
+boot.cfg                          2018-06-19 09:20      130
+initrd.gz                         2018-06-19 09:20      12M
+vmlinux-3.16.0-6-loongson-2f      2018-06-19 09:20      11M
+
+**NOTE** Unfortunately Debian dropped images for loongson-2f. https://lists.debian.org/debian-devel-announce/2016/07/msg00000.html 
 
 ## TFTP Server
 Run tftpd32 (http://tftpd32.jounin.net/) on my windows 10 computer, and point 'current folder' to where netboot files saves. 
